@@ -10,8 +10,8 @@ then copies `apk_info/base.apk` into `app/build/outputs/apk/debug/app-debug.apk`
 so the normal Gradle debug output is the restored OTT app.
 
 The current APK also blocks the external browser redirect used by the
-"click link/watch ad" flow, shortens long one-shot wait timers, and attempts the
-WebView completion hook used by the remote gate.
+"click link/watch ad" flow, shortens long one-shot wait timers, and bypasses the
+remote WebView support/ad gate that posts to `/mobile/verify2.php`.
 
 ## Build
 

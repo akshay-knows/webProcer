@@ -22,9 +22,12 @@ The native React Native timer manager also clamps long, one-shot timers to 1 ms.
 This prevents the ad gate from forcing a 30-second wait before the app can be
 used, while leaving repeating timers alone.
 
-The app's WebView is also patched to call the existing `pressfromAPP()` page hook
-after content loads. The remote API supplies a WebView URL for the gate, so this
-targets the in-page ad completion path that is not handled by Android `Linking`.
+The app's WebView is also patched for the live `net52.cc` support/ad gate. The
+remote page at `/mobile/home?app=1` can show "Open 1 ADS per Day" and force a
+20-30 second check through `/mobile/verify2.php`. The patched WebView detects
+that gate, blocks the external ad window, posts the page's own `data-addhash` to
+the verification endpoint, and redirects to `/mobile/?app=1`, which serves the
+real mobile OTT content after verification.
 
 ## Content source notes
 
