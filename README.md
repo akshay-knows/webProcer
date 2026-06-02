@@ -7,7 +7,10 @@ Gradle wrapper/scaffold. The functional OTT app is the restored APK at
 The original APK source code was not decompiled into Java, Kotlin, or React
 Native source files. Because of that, `assembleDebug` builds the scaffold and
 then copies `apk_info/base.apk` into `app/build/outputs/apk/debug/app-debug.apk`
-so the normal Gradle debug output is the restored working OTT app.
+so the normal Gradle debug output is the restored OTT app.
+
+The current APK also blocks the external browser redirect used by the
+"click link/watch ad" flow, while allowing the in-app flow to continue.
 
 ## Build
 

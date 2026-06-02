@@ -9,8 +9,14 @@ The functional OTT app remains `apk_info/base.apk`.
 ## Current Gradle behavior
 
 `assembleDebug` copies the restored working APK into
-`app/build/outputs/apk/debug/app-debug.apk`. This preserves the app behavior that
-existed before the broken React Native Gradle-plugin change.
+`app/build/outputs/apk/debug/app-debug.apk`.
+
+## Redirect/ad-link mitigation
+
+`apk_info/base.apk` has been patched at the Android bytecode level to neutralize
+React Native's external URL launcher. Calls that previously opened browser links
+now resolve successfully without sending an Android `VIEW` intent, preventing the
+"click link/watch ad" flow from redirecting users to outside websites.
 
 ## Content source notes
 
