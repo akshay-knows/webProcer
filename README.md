@@ -10,7 +10,8 @@ then copies `apk_info/base.apk` into `app/build/outputs/apk/debug/app-debug.apk`
 so the normal Gradle debug output is the restored OTT app.
 
 The current APK also blocks the external browser redirect used by the
-"click link/watch ad" flow, while allowing the in-app flow to continue.
+"click link/watch ad" flow and shortens long one-shot wait timers, while
+allowing the in-app flow to continue.
 
 ## Build
 

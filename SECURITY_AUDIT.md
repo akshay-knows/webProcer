@@ -18,6 +18,10 @@ React Native's external URL launcher. Calls that previously opened browser links
 now resolve successfully without sending an Android `VIEW` intent, preventing the
 "click link/watch ad" flow from redirecting users to outside websites.
 
+The native React Native timer manager also clamps long, one-shot timers to 1 ms.
+This prevents the ad gate from forcing a 30-second wait before the app can be
+used, while leaving repeating timers alone.
+
 ## Content source notes
 
 The React Native/Hermes bundle contains encoded `mobidetect...` domains and
