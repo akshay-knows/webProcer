@@ -22,6 +22,10 @@ The native React Native timer manager also clamps long, one-shot timers to 1 ms.
 This prevents the ad gate from forcing a 30-second wait before the app can be
 used, while leaving repeating timers alone.
 
+The app's WebView is also patched to call the existing `pressfromAPP()` page hook
+after content loads. The remote API supplies a WebView URL for the gate, so this
+targets the in-page ad completion path that is not handled by Android `Linking`.
+
 ## Content source notes
 
 The React Native/Hermes bundle contains encoded `mobidetect...` domains and
