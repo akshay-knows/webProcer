@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetMirror</string>
+    <string name="app_startup_message">NetMirror APK wrapper project</string>
+</resources>
