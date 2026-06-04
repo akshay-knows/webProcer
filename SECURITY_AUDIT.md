@@ -25,9 +25,11 @@ used, while leaving repeating timers alone.
 The app's WebView is also patched for the live `net52.cc` support/ad gate. The
 remote page at `/mobile/home?app=1` can show "Open 1 ADS per Day" and force a
 20-30 second check through `/mobile/verify2.php`. The patched WebView detects
-that gate, blocks the external ad window, posts the page's own `data-addhash` to
-the verification endpoint, and redirects to `/mobile/?app=1`, which serves the
-real mobile OTT content after verification.
+that gate, blocks the visible external ad window, starts the same server-side
+verification flow in a hidden frame, polls `/mobile/verify2.php`, and redirects
+to `/mobile/home?app=1` only after the server returns `All Done`. The WebView
+also skips the `/mobile/?app=1` intro carousel, whose "Go to Home" button points
+back to the gated route.
 
 ## Content source notes
 

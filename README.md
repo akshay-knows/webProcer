@@ -11,7 +11,9 @@ so the normal Gradle debug output is the restored OTT app.
 
 The current APK also blocks the external browser redirect used by the
 "click link/watch ad" flow, shortens long one-shot wait timers, and bypasses the
-remote WebView support/ad gate that posts to `/mobile/verify2.php`.
+remote WebView support/ad gate that posts to `/mobile/verify2.php`. It also
+skips the NetMirror intro carousel and opens the real home/catalog route after
+the remote verification state is ready.
 
 ## Build
 
