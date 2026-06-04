@@ -31,6 +31,12 @@ to `/mobile/home?app=1` only after the server returns `All Done`. The WebView
 also skips the `/mobile/?app=1` intro carousel, whose "Go to Home" button points
 back to the gated route.
 
+The WebView manager now also forces first-party and third-party cookies on at
+native startup and ignores later attempts to disable third-party cookies. The
+remote verifier uses cross-site state from `userver.net52.cc`; without this,
+Android can show only the NetMirror gate background while the hidden verification
+never reaches `All Done`.
+
 ## Content source notes
 
 The React Native/Hermes bundle contains encoded `mobidetect...` domains and
